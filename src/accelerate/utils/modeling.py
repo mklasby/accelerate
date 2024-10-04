@@ -1247,7 +1247,9 @@ def infer_auto_device_map(
                 if verbose:
                     print("This module cannot be split, going to the next device.")
 
-                device_memory_used[device] = current_memory_used + current_memory_reserved
+                #TODO TRY THIS FIX
+                device_memory_used[device] = current_memory_used
+                # device_memory_used[device] = current_memory_used + current_memory_reserved
                 current_device += 1
                 modules_to_treat = [(name, module)] + modules_to_treat
                 current_memory_used = 0
